@@ -1,0 +1,141 @@
+html {
+    box-sizing: border-box; 
+}
+
+*, *::before, *::after {
+    box-sizing: inherit; 
+}
+
+body {
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-weight: 500;
+    background-color: hsl(214, 17%, 92%);
+    margin: 0;
+    min-height: 100vh;
+    place-content: center;
+}
+
+main {
+    Font-size: 13px;
+    display: grid;
+    gap: 1.5rem;
+    grid-auto-columns: 1fr;
+    grid-template-areas: 
+    'one'
+    'two'
+    'three'
+    'four'
+    'five';
+    padding-block: 2rem;
+    width: min(95%, 70rem);
+    margin-inline: auto;
+}
+
+.container:nth-child(1) {
+    grid-area: one;
+}
+
+.container:nth-child(2) {
+    grid-area: two;
+}
+
+.container:nth-child(3) {
+    grid-area: three;
+}
+
+.container:nth-child(4) {
+    grid-area: four;
+}
+
+.container:nth-child(5) {
+    grid-area: five;
+}
+
+@media screen and (min-width: 38em) {
+    main {
+        grid-template-areas: 
+        'one one two'
+        'two five'
+        'three five'
+        'four four';
+    }
+}
+
+@media screen and (min-width: 54em) {
+  main {
+      grid-template-areas:
+      "one one two"
+      "five five five"
+      "three four four";
+  }
+}
+
+@media screen and (min-width: 75em) {
+    main {
+        grid-template-areas: 
+        'one one two five'
+        'three four four five';
+    }
+}
+.container {
+    border-radius: 0.5rem;
+    padding: 2rem;
+}
+
+.avatar-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 1rem;
+    opacity: 0.7;
+    
+}
+
+img.avatar {
+    width: 1.75rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.contacto p,h2{
+    margin: 0;
+}
+
+h2 {
+    font-weight: 600;
+}
+
+p {
+    opacity: 0.7;
+}
+.card1 {
+    background-color: hsl(263, 55%, 52%);
+    color: hsl(0, 0%, 100%);
+    grid-column: span 2;
+}
+
+.card2 {
+    background-color: hsl(217, 19%, 35%);
+    color: hsl(0, 0%, 100%);
+}
+
+.card3 {
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(224, 10%, 45%);
+    grid-row-start: 2;
+}
+
+.card4 {
+    background-color: hsl(0, 0%, 7%);
+    color: hsl(0, 0%, 81%);
+    grid-column: span 2;
+}
+
+.card5 {
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(224, 10%, 45%);
+    grid-column-start: 4;
+    grid-row-start: 1;
+    grid-row-end: span 2;
+}
